@@ -1,0 +1,28 @@
+[project]
+name = "nextools"
+version = "0.0.1"
+description = "Blender Addon: nextools"
+authors = [
+    {name = "unclepomedev"}
+]
+requires-python = ">=3.11"
+dependencies = ["pip"] # pip is for suppressing PyCharm warning
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.11",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.uv]
+package = true
