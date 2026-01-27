@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -13,11 +13,11 @@ from .bpy_struct import bpy_struct
 class UDIMTile(bpy_struct):
     label: str
     number: int
-    size: int
+    size: list[int]
     channels: int
     generated_type: str
     generated_width: int
     generated_height: int
     use_generated_float: bool
     is_generated_tile: bool
-    generated_color: float
+    generated_color: list[float]

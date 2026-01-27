@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -18,6 +18,5 @@ class NodeTreeInterfacePanel(NodeTreeInterfaceItem):
     name: str
     description: str
     default_closed: bool
-    select: bool
     interface_items: bpy_prop_collection['NodeTreeInterfaceItem']
     persistent_uid: int

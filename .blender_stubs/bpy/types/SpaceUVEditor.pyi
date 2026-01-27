@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -19,13 +19,12 @@ class SpaceUVEditor(bpy_struct):
     show_uv: bool
     show_pixel_coords: bool
     show_faces: bool
-    tile_grid_shape: int
+    tile_grid_shape: list[int]
     show_grid_over_image: bool
     grid_shape_source: str
-    custom_grid_subdivisions: int
+    custom_grid_subdivisions: list[int]
     uv_opacity: float
     uv_face_opacity: float
-    uv_edge_opacity: float
     stretch_opacity: float
     pixel_round_mode: str
     lock_bounds: bool

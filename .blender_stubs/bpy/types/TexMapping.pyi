@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -12,11 +12,11 @@ from .bpy_prop_collection import bpy_prop_collection
 from .bpy_struct import bpy_struct
 class TexMapping(bpy_struct):
     vector_type: str
-    translation: float
-    rotation: float
-    scale: float
-    min: float
-    max: float
+    translation: list[float]
+    rotation: list[float]
+    scale: list[float]
+    min: list[float]
+    max: list[float]
     use_min: bool
     use_max: bool
     mapping_x: str

@@ -21,6 +21,7 @@ class OBJECT_OT_sample_operator(bpy.types.Operator):
         # 1. Modify the object name
         original_name = obj.name
         from .rust_bridge import solve_heavy_math
+
         ans = solve_heavy_math(1, 4)
         obj.name = f"{original_name}_processed_{ans}"
 

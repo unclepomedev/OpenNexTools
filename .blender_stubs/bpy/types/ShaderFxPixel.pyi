@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -17,5 +17,5 @@ class ShaderFxPixel(ShaderFx):
     show_render: bool
     show_in_editmode: bool
     show_expanded: bool
-    size: int
+    size: list[int]
     use_antialiasing: bool

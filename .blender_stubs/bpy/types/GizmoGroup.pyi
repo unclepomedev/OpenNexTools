@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -17,7 +17,7 @@ class GizmoGroup(bpy_struct):
     bl_space_type: str
     bl_region_type: str
     bl_owner_id: str
-    bl_options: str
+    bl_options: set[str]
     name: str
     gizmos: bpy_prop_collection['Gizmo']
     def poll(self, *args, **kwargs) -> Any: ...

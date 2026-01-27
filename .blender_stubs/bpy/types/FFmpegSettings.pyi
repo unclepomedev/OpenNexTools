@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -23,7 +23,6 @@ class FFmpegSettings(bpy_struct):
     buffersize: int
     packetsize: int
     constant_rate_factor: str
-    custom_constant_rate_factor: int
     ffmpeg_preset: str
     ffmpeg_prores_profile: str
     use_autosplit: bool

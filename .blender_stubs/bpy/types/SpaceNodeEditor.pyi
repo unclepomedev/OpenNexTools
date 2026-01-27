@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -35,9 +35,9 @@ class SpaceNodeEditor(Space):
     selected_node_group: 'NodeTree'
     show_annotation: bool
     backdrop_zoom: float
-    backdrop_offset: float
+    backdrop_offset: list[float]
     backdrop_channels: str
-    cursor_location: float
+    cursor_location: list[float]
     insert_offset_direction: str
     show_gizmo: bool
     show_gizmo_active_node: bool

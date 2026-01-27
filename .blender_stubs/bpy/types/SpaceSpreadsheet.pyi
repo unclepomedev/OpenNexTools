@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -26,7 +26,6 @@ class SpaceSpreadsheet(Space):
     use_filter: bool
     viewer_path: 'ViewerPath'
     show_only_selected: bool
-    geometry_item_type: str
     geometry_component_type: str
     attribute_domain: str
     object_eval_state: str

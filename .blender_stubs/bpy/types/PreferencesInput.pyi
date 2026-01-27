@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -36,7 +36,6 @@ class PreferencesInput(bpy_struct):
     pressure_threshold_max: float
     pressure_softness: float
     tablet_api: str
-    show_tablet_debug_values: bool
     xr_navigation: 'XrNavigation'
     ndof_translation_sensitivity: float
     ndof_rotation_sensitivity: float

@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -13,7 +13,7 @@ from .bpy_struct import bpy_struct
 class SplinePoint(bpy_struct):
     select: bool
     hide: bool
-    co: float
+    co: list[float]
     weight: float
     tilt: float
     weight_softbody: float

@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -41,13 +41,13 @@ class IntProperty(Property):
     is_path_supports_templates: bool
     is_deprecated: bool
     deprecated_note: str
-    deprecated_version: int
-    deprecated_removal_version: int
-    tags: str
+    deprecated_version: list[int]
+    deprecated_removal_version: list[int]
+    tags: set[str]
     default: int
-    default_array: int
+    default_array: list[int]
     array_length: int
-    array_dimensions: int
+    array_dimensions: list[int]
     is_array: bool
     hard_min: int
     hard_max: int

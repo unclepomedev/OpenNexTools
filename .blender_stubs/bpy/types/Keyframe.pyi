@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -22,7 +22,7 @@ class Keyframe(bpy_struct):
     back: float
     amplitude: float
     period: float
-    handle_left: float
-    co: float
-    co_ui: float
-    handle_right: float
+    handle_left: list[float]
+    co: list[float]
+    co_ui: list[float]
+    handle_right: list[float]

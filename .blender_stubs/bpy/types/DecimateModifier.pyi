@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -35,5 +35,5 @@ class DecimateModifier(Modifier):
     symmetry_axis: str
     vertex_group_factor: float
     use_dissolve_boundaries: bool
-    delimit: str
+    delimit: set[str]
     face_count: int

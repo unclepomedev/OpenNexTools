@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -32,7 +32,6 @@ class Preferences(bpy_struct):
     addons: bpy_prop_collection['Addon']
     autoexec_paths: bpy_prop_collection['PathCompare']
     use_recent_searches: bool
-    show_hidden_ids: bool
     view: 'PreferencesView'
     edit: 'PreferencesEdit'
     inputs: 'PreferencesInput'
@@ -42,7 +41,7 @@ class Preferences(bpy_struct):
     system: 'PreferencesSystem'
     apps: 'PreferencesApps'
     experimental: 'PreferencesExperimental'
-    version: int
+    version: list[int]
     studio_lights: bpy_prop_collection['StudioLight']
     use_preferences_save: bool
     is_dirty: bool

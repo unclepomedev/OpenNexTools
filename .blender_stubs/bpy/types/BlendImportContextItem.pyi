@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -18,7 +18,7 @@ class BlendImportContextItem(bpy_struct):
     id_type: str
     source_libraries: bpy_prop_collection['BlendImportContextLibrary']
     append_action: str
-    import_info: str
+    import_info: set[str]
     id: 'ID'
     source_library: 'Library'
     library_override_id: 'ID'

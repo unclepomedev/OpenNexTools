@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -18,5 +18,5 @@ class XrActionMapBinding(bpy_struct):
     threshold: float
     axis0_region: str
     axis1_region: str
-    pose_location: float
-    pose_rotation: float
+    pose_location: list[float]
+    pose_rotation: list[float]

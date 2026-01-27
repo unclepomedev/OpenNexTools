@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -55,16 +55,14 @@ class WindowManager(ID):
     asset_path_dummy: str
     addon_search: str
     addon_filter: str
-    addon_support: str
+    addon_support: set[str]
     poselib_previous_action: 'Action'
     addon_tags: bpy_prop_collection['BlExtDummyGroup']
     extension_tags: bpy_prop_collection['BlExtDummyGroup']
     extension_search: str
     extension_type: str
-    extension_use_filter: bool
     extension_show_panel_installed: bool
     extension_show_panel_available: bool
-    extension_repo_filter: str
     def bl_system_properties_get(self, *args, **kwargs) -> Any: ...
     def rename(self, *args, **kwargs) -> Any: ...
     def evaluated_get(self, *args, **kwargs) -> Any: ...

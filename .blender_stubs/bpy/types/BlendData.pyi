@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -55,7 +55,7 @@ class BlendData(bpy_struct):
     is_dirty: bool
     is_saved: bool
     use_autopack: bool
-    version: int
+    version: list[int]
     cameras: bpy_prop_collection['Camera']
     scenes: bpy_prop_collection['Scene']
     objects: bpy_prop_collection['Object']

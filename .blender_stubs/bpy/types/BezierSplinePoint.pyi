@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -17,9 +17,9 @@ class BezierSplinePoint(bpy_struct):
     hide: bool
     handle_left_type: str
     handle_right_type: str
-    handle_left: float
-    co: float
-    handle_right: float
+    handle_left: list[float]
+    co: list[float]
+    handle_right: list[float]
     tilt: float
     weight_softbody: float
     radius: float

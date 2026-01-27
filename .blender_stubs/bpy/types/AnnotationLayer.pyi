@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -16,13 +16,13 @@ class AnnotationLayer(bpy_struct):
     frames: bpy_prop_collection['AnnotationFrame']
     active_frame: 'AnnotationFrame'
     annotation_opacity: float
-    color: float
+    color: list[float]
     thickness: int
     use_annotation_onion_skinning: bool
     annotation_onion_before_range: int
     annotation_onion_after_range: int
-    annotation_onion_before_color: float
-    annotation_onion_after_color: float
+    annotation_onion_before_color: list[float]
+    annotation_onion_after_color: list[float]
     annotation_onion_use_custom_color: bool
     annotation_hide: bool
     lock: bool

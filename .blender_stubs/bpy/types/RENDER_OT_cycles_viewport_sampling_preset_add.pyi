@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -25,7 +25,7 @@ class RENDER_OT_cycles_viewport_sampling_preset_add(AddPresetBase, Operator):
     bl_translation_context: str
     bl_description: str
     bl_undo_group: str
-    bl_options: str
+    bl_options: set[str]
     bl_cursor_pending: str
     layout: 'UILayout'
     options: 'OperatorOptions'

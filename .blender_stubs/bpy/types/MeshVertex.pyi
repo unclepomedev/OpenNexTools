@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -12,10 +12,10 @@ from .bpy_prop_collection import bpy_prop_collection
 from .bpy_struct import bpy_struct
 from .VertexGroupElement import VertexGroupElement
 class MeshVertex(bpy_struct):
-    co: float
-    normal: float
+    co: list[float]
+    normal: list[float]
     select: bool
     hide: bool
     groups: bpy_prop_collection['VertexGroupElement']
     index: int
-    undeformed_co: float
+    undeformed_co: list[float]

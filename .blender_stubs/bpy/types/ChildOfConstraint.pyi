@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -39,4 +39,4 @@ class ChildOfConstraint(Constraint):
     use_scale_y: bool
     use_scale_z: bool
     set_inverse_pending: bool
-    inverse_matrix: float
+    inverse_matrix: list[float]

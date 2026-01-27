@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -14,7 +14,7 @@ class KeyingSetInfo(bpy_struct):
     bl_idname: str
     bl_label: str
     bl_description: str
-    bl_options: str
+    bl_options: set[str]
     def poll(self, *args, **kwargs) -> Any: ...
     def iterator(self, *args, **kwargs) -> Any: ...
     def generate(self, *args, **kwargs) -> Any: ...

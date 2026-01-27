@@ -3,7 +3,7 @@ Online Documentation:
 https://docs.blender.org/api/current/bpy.app.handlers.html
 """
 
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -32,7 +32,6 @@ def count(value, /) -> Any:
 
 depsgraph_update_post: Any
 depsgraph_update_pre: Any
-exit_pre: Any
 frame_change_post: Any
 frame_change_pre: Any
 def index(value, start=0, stop=9223372036854775807, /) -> Any:
@@ -47,8 +46,8 @@ load_factory_startup_post: Any
 load_post: Any
 load_post_fail: Any
 load_pre: Any
-n_fields = 44
-n_sequence_fields = 44
+n_fields = 43
+n_sequence_fields = 43
 n_unnamed_fields = 0
 object_bake_cancel: Any
 object_bake_complete: Any

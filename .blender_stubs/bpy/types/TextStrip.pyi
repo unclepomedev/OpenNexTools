@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -56,15 +56,15 @@ class TextStrip(EffectStrip):
     input_count: int
     font: 'VectorFont'
     font_size: float
-    color: float
-    shadow_color: float
+    color: list[float]
+    shadow_color: list[float]
     shadow_angle: float
     shadow_offset: float
     shadow_blur: float
-    outline_color: float
+    outline_color: list[float]
     outline_width: float
-    box_color: float
-    location: float
+    box_color: list[float]
+    location: list[float]
     wrap_width: float
     box_margin: float
     box_roundness: float

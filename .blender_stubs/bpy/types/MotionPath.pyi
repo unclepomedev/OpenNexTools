@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -16,8 +16,8 @@ class MotionPath(bpy_struct):
     frame_start: int
     frame_end: int
     length: int
-    color: float
-    color_post: float
+    color: list[float]
+    color_post: list[float]
     line_thickness: int
     use_bone_head: bool
     is_modified: bool

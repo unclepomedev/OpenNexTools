@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -11,7 +11,7 @@ from .bpy_prop_collection import bpy_prop_collection
 
 from .bpy_struct import bpy_struct
 class ThemeBoneColorSet(bpy_struct):
-    normal: float
-    select: float
-    active: float
+    normal: list[float]
+    select: list[float]
+    active: list[float]
     show_colored_constraints: bool

@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -29,7 +29,7 @@ class VertexWeightProximityModifier(Modifier):
     persistent_uid: int
     vertex_group: str
     proximity_mode: str
-    proximity_geometry: str
+    proximity_geometry: set[str]
     target: 'Object'
     min_dist: float
     max_dist: float

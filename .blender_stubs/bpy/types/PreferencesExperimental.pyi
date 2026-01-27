@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -26,7 +26,5 @@ class PreferencesExperimental(bpy_struct):
     use_all_linked_data_direct: bool
     use_shader_node_previews: bool
     use_geometry_nodes_lists: bool
-    use_geometry_bundle: bool
     use_extensions_debug: bool
     use_recompute_usercount_on_save_debug: bool
-    use_paint_debug: bool

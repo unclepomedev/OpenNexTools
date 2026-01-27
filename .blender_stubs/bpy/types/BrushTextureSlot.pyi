@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -14,9 +14,9 @@ from .Texture import Texture
 class BrushTextureSlot(TextureSlot):
     texture: 'Texture'
     name: str
-    offset: float
-    scale: float
-    color: float
+    offset: list[float]
+    scale: list[float]
+    color: list[float]
     blend_type: str
     default_value: float
     output_node: str

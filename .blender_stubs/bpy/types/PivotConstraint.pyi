@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -32,5 +32,5 @@ class PivotConstraint(Constraint):
     target: 'Object'
     subtarget: str
     use_relative_location: bool
-    offset: float
+    offset: list[float]
     rotation_range: str

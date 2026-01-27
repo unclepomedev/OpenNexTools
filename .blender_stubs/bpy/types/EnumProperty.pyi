@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -42,11 +42,11 @@ class EnumProperty(Property):
     is_path_supports_templates: bool
     is_deprecated: bool
     deprecated_note: str
-    deprecated_version: int
-    deprecated_removal_version: int
-    tags: str
+    deprecated_version: list[int]
+    deprecated_removal_version: list[int]
+    tags: set[str]
     default: str
-    default_flag: str
+    default_flag: set[str]
     enum_items: bpy_prop_collection['EnumPropertyItem']
     enum_items_static: bpy_prop_collection['EnumPropertyItem']
     enum_items_static_ui: bpy_prop_collection['EnumPropertyItem']

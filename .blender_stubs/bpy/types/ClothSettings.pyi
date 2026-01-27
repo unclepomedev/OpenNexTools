@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -24,7 +24,7 @@ class ClothSettings(bpy_struct):
     density_strength: float
     mass: float
     vertex_group_mass: str
-    gravity: float
+    gravity: list[float]
     air_damping: float
     pin_stiffness: float
     quality: int

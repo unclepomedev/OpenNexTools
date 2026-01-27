@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -11,11 +11,11 @@ from .bpy_prop_collection import bpy_prop_collection
 
 from .bpy_struct import bpy_struct
 class MovieTrackingMarker(bpy_struct):
-    co: float
+    co: list[float]
     frame: int
     mute: bool
-    pattern_corners: float
-    pattern_bound_box: float
-    search_min: float
-    search_max: float
+    pattern_corners: list[float]
+    pattern_bound_box: list[float]
+    search_min: list[float]
+    search_max: list[float]
     is_keyed: bool

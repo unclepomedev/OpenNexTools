@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -29,7 +29,6 @@ class NodeTreeInterfaceSocketVectorFactor4D(NodeTreeInterfaceSocket):
     layer_selection_field: bool
     menu_expanded: bool
     optional_label: bool
-    select: bool
     attribute_domain: str
     default_attribute_name: str
     structure_type: str
@@ -37,7 +36,7 @@ class NodeTreeInterfaceSocketVectorFactor4D(NodeTreeInterfaceSocket):
     bl_socket_idname: str
     subtype: str
     dimensions: int
-    default_value: float
+    default_value: list[float]
     min_value: float
     max_value: float
     def bl_system_properties_get(self, *args, **kwargs) -> Any: ...

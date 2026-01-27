@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -16,7 +16,7 @@ class XrSessionSettings(bpy_struct):
     shading: 'View3DShading'
     base_pose_type: str
     base_pose_object: 'Object'
-    base_pose_location: float
+    base_pose_location: list[float]
     base_pose_angle: float
     base_scale: float
     show_floor: bool
@@ -30,7 +30,6 @@ class XrSessionSettings(bpy_struct):
     clip_start: float
     clip_end: float
     fly_speed: float
-    view_scale: float
     use_positional_tracking: bool
     use_absolute_tracking: bool
     show_object_viewport_mesh: bool

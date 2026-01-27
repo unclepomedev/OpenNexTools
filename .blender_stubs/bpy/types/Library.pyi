@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -40,7 +40,7 @@ class Library(ID):
     filepath: str
     parent: 'Library'
     packed_file: 'PackedFile'
-    version: int
+    version: list[int]
     needs_liboverride_resync: bool
     is_editable: bool
     is_archive: bool

@@ -24,10 +24,10 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Run Ruff (Lint)
-        run: uv run ruff check .
+        run: uv run ruff check nextools
 
       - name: Run Ruff (Format)
-        run: uv run ruff format --check .
+        run: uv run ruff format --check nextools
 
   test:
     name: Test on ${{ matrix.os }} - Blender ${{ matrix.blender-version }}
@@ -37,7 +37,7 @@ jobs:
       matrix:
         os: [ ubuntu-latest, windows-latest, macos-latest ]
         # Check https://download.blender.org/release/ for available versions
-        blender-version: [ "5.0.0" ]
+        blender-version: [ "5.0.1" ]
 
     steps:
       - name: Checkout code

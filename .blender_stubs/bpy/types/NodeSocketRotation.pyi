@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -36,7 +36,7 @@ class NodeSocketRotation(NodeSocketStandard):
     bl_idname: str
     bl_label: str
     bl_subtype_label: str
-    default_value: float
+    default_value: list[float]
     def bl_system_properties_get(self, *args, **kwargs) -> Any: ...
     def draw(self, *args, **kwargs) -> Any: ...
     def draw_color(self, *args, **kwargs) -> Any: ...

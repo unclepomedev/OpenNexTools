@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -23,6 +23,6 @@ class UI_MT_button_context_menu(Menu):
     bl_translation_context: str
     bl_description: str
     bl_owner_id: str
-    bl_options: str
+    bl_options: set[str]
     def poll(self, *args, **kwargs) -> Any: ...
     def draw(self, *args, **kwargs) -> Any: ...

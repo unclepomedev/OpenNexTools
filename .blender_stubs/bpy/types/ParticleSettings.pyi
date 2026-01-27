@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -139,7 +139,7 @@ class ParticleSettings(ID):
     tangent_factor: float
     tangent_phase: float
     reactor_factor: float
-    object_align_factor: float
+    object_align_factor: list[float]
     angular_velocity_factor: float
     phase_factor: float
     rotation_factor_random: float

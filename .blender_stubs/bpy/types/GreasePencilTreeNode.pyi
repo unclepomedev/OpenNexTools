@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -18,7 +18,7 @@ class GreasePencilTreeNode(bpy_struct):
     select: bool
     use_onion_skinning: bool
     use_masks: bool
-    channel_color: float
+    channel_color: list[float]
     next_node: 'GreasePencilTreeNode'
     prev_node: 'GreasePencilTreeNode'
     parent_group: 'GreasePencilLayerGroup'

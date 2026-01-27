@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -30,5 +30,5 @@ class VolumeDisplaceModifier(Modifier):
     texture: 'Texture'
     texture_map_mode: str
     texture_map_object: 'Object'
-    texture_mid_level: float
+    texture_mid_level: list[float]
     texture_sample_radius: float

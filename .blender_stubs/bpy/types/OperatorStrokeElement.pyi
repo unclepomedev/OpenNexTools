@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -12,9 +12,9 @@ from .bpy_prop_collection import bpy_prop_collection
 from .PropertyGroup import PropertyGroup
 class OperatorStrokeElement(PropertyGroup):
     name: str
-    location: float
-    mouse: float
-    mouse_event: float
+    location: list[float]
+    mouse: list[float]
+    mouse_event: list[float]
     pressure: float
     size: float
     x_tilt: float

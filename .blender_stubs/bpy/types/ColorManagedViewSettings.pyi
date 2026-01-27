@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -21,6 +21,6 @@ class ColorManagedViewSettings(bpy_struct):
     use_white_balance: bool
     white_balance_temperature: float
     white_balance_tint: float
-    white_balance_whitepoint: float
+    white_balance_whitepoint: list[float]
     is_hdr: bool
     support_emulation: bool

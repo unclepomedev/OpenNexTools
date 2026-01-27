@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -13,7 +13,7 @@ from .bpy_struct import bpy_struct
 from .ColorRamp import ColorRamp
 from .ParticleSystem import ParticleSystem
 class DynamicPaintBrushSettings(bpy_struct):
-    paint_color: float
+    paint_color: list[float]
     paint_alpha: float
     use_absolute_alpha: bool
     paint_wetness: float

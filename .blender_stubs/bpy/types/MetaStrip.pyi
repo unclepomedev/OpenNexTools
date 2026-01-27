@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -41,7 +41,6 @@ class MetaStrip(Strip):
     show_retiming_keys: bool
     strips: bpy_prop_collection['Strip']
     channels: bpy_prop_collection['SequenceTimelineChannel']
-    volume: float
     use_deinterlace: bool
     alpha_mode: str
     use_flip_x: bool

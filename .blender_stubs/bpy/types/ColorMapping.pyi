@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -18,5 +18,5 @@ class ColorMapping(bpy_struct):
     contrast: float
     saturation: float
     blend_type: str
-    blend_color: float
+    blend_color: list[float]
     blend_factor: float

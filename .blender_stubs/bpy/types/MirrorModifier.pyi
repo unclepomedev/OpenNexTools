@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -25,9 +25,9 @@ class MirrorModifier(Modifier):
     use_apply_on_spline: bool
     execution_time: float
     persistent_uid: int
-    use_axis: bool
-    use_bisect_axis: bool
-    use_bisect_flip_axis: bool
+    use_axis: list[bool]
+    use_bisect_axis: list[bool]
+    use_bisect_flip_axis: list[bool]
     use_clip: bool
     use_mirror_vertex_groups: bool
     use_mirror_merge: bool

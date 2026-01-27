@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -22,7 +22,7 @@ class FCurve(bpy_struct):
     data_path: str
     array_index: int
     color_mode: str
-    color: float
+    color: list[float]
     select: bool
     lock: bool
     mute: bool

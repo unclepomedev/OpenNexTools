@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -13,6 +13,6 @@ from .bpy_struct import bpy_struct
 class UserSolidLight(bpy_struct):
     use: bool
     smooth: float
-    direction: float
-    specular_color: float
-    diffuse_color: float
+    direction: list[float]
+    specular_color: list[float]
+    diffuse_color: list[float]

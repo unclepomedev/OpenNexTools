@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -96,7 +96,7 @@ class Scene(ID):
     rigidbody_world: 'RigidBodyWorld'
     tool_settings: 'ToolSettings'
     unit_settings: 'UnitSettings'
-    gravity: float
+    gravity: list[float]
     use_gravity: bool
     render: 'RenderSettings'
     safe_areas: 'DisplaySafeAreas'

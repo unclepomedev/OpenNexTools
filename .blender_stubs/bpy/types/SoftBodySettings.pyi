@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -45,9 +45,9 @@ class SoftBodySettings(bpy_struct):
     use_auto_step: bool
     use_diagnose: bool
     use_estimate_matrix: bool
-    location_mass_center: float
-    rotation_estimate: float
-    scale_estimate: float
+    location_mass_center: list[float]
+    rotation_estimate: list[float]
+    scale_estimate: list[float]
     use_goal: bool
     use_edges: bool
     use_stiff_quads: bool

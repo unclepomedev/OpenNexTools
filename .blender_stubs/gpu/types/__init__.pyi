@@ -3,7 +3,7 @@ Online Documentation:
 https://docs.blender.org/api/current/gpu.types.html
 """
 
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -187,7 +187,7 @@ class GPUStageInterfaceInfo:
    List of varyings between shader stages.
 
    :arg name: Name of the interface block.
-   :type name: str
+   :type value: str
 """
     """
     Online Documentation:
@@ -202,14 +202,14 @@ class GPUStageInterfaceInfo:
 class GPUTexture:
     """.. class:: GPUTexture(size, *, layers=0, is_cubemap=False, format='RGBA8', data=None)
 
-   This object gives access to GPU textures.
+   This object gives access to off GPU textures.
 
    :arg size: Dimensions of the texture 1D, 2D, 3D or cubemap.
    :type size: int | Sequence[int]
    :arg layers: Number of layers in texture array or number of cubemaps in cubemap array
    :type layers: int
    :arg is_cubemap: Indicates the creation of a cubemap texture.
-   :type is_cubemap: bool
+   :type is_cubemap: int
    :arg format: Internal data format inside GPU memory. Possible values are:
       ``RGBA8UI``,
       ``RGBA8I``,
@@ -264,15 +264,9 @@ class GPUTexture:
     https://docs.blender.org/api/current/gpu.types.html
     """
     def __init__(self, /, *args, **kwargs) -> Any: ...
-    def anisotropic_filter(*args, **kwargs) -> Any: ...
     def clear(*args, **kwargs) -> Any: ...
-    def extend_mode(*args, **kwargs) -> Any: ...
-    def extend_mode_x(*args, **kwargs) -> Any: ...
-    def extend_mode_y(*args, **kwargs) -> Any: ...
-    def filter_mode(*args, **kwargs) -> Any: ...
     format: Any
     height: Any
-    def mipmap_mode(*args, **kwargs) -> Any: ...
     def read(*args, **kwargs) -> Any: ...
     width: Any
 

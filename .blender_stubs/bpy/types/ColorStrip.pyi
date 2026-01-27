@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -53,7 +53,7 @@ class ColorStrip(EffectStrip):
     use_proxy: bool
     proxy: 'StripProxy'
     input_count: int
-    color: float
+    color: list[float]
     def bl_system_properties_get(self, *args, **kwargs) -> Any: ...
     def strip_elem_from_frame(self, *args, **kwargs) -> Any: ...
     def swap(self, *args, **kwargs) -> Any: ...

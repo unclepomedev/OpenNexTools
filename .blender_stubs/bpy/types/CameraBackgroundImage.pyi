@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -21,7 +21,7 @@ class CameraBackgroundImage(bpy_struct):
     clip: 'MovieClip'
     image_user: 'ImageUser'
     clip_user: 'MovieClipUser'
-    offset: float
+    offset: list[float]
     scale: float
     rotation: float
     use_flip_x: bool

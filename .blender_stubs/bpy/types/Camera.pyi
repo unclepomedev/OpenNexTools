@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -67,7 +67,7 @@ class Camera(ID):
     show_sensor: bool
     show_background_images: bool
     lens_unit: str
-    composition_guide_color: float
+    composition_guide_color: list[float]
     show_composition_center: bool
     show_composition_center_diagonal: bool
     show_composition_thirds: bool

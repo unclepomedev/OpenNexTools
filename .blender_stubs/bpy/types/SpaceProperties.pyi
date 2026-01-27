@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -38,6 +38,6 @@ class SpaceProperties(Space):
     show_properties_strip_modifier: bool
     pin_id: 'ID'
     use_pin_id: bool
-    tab_search_results: bool
+    tab_search_results: list[bool]
     search_filter: str
     outliner_sync: str

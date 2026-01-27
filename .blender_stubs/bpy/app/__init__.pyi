@@ -3,7 +3,7 @@ Online Documentation:
 https://docs.blender.org/api/current/bpy.app.html
 """
 
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -19,12 +19,12 @@ autoexec_fail = False
 autoexec_fail_message = ''
 autoexec_fail_quiet = False
 background = True
-binary_path = '/Users/xxx/Library/Application Support/blup/versions/5.1.0-alpha-05cfe524a2bf/Blender.app/Contents/MacOS/Blender'
+binary_path = '/Users/xxx/Library/Application Support/blup/versions/5.0.1/Blender.app/Contents/MacOS/Blender'
 build_branch: Any
 build_cflags: Any
 build_commit_date: Any
 build_commit_time: Any
-build_commit_timestamp = 1769036345
+build_commit_timestamp = 1765816573
 build_cxxflags: Any
 build_date: Any
 build_hash: Any
@@ -34,7 +34,6 @@ build_platform: Any
 build_system: Any
 build_time: Any
 build_type: Any
-cachedir = '/Users/xxx/Library/Caches/Blender/'
 def count(value, /) -> Any:
     """
     Online Documentation:
@@ -104,15 +103,15 @@ python_args: Any
 render_icon_size = 32
 render_preview_size = 128
 sdl: Any
-tempdir = '/var/folders/zn/vrqg3hq9059c8w8ht1pmpycm0000gn/T/blender_KSaraC/'
+tempdir = '/var/folders/zn/vrqg3hq9059c8w8ht1pmpycm0000gn/T/blender_IVTm4k/'
 translations: Any
 usd: Any
 use_event_simulate = False
 use_userpref_skip_save_on_exit = True
 version: Any
-version_cycle = 'alpha'
+version_cycle = 'release'
 version_file: Any
-version_string = '5.1.0 Alpha'
+version_string = '5.0.1'
 from . import handlers as handlers
 # Documentation: https://docs.blender.org/api/current/bpy.app.handlers.html
 from . import icons as icons

@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -28,7 +28,6 @@ class View3DOverlay(bpy_struct):
     show_cursor: bool
     show_text: bool
     show_stats: bool
-    show_performance: bool
     show_camera_guides: bool
     show_camera_passepartout: bool
     show_extras: bool
@@ -94,9 +93,9 @@ class View3DOverlay(bpy_struct):
     use_gpencil_show_directions: bool
     use_gpencil_show_material_name: bool
     gpencil_grid_opacity: float
-    gpencil_grid_color: float
-    gpencil_grid_scale: float
-    gpencil_grid_offset: float
+    gpencil_grid_color: list[float]
+    gpencil_grid_scale: list[float]
+    gpencil_grid_offset: list[float]
     gpencil_grid_subdivisions: int
     gpencil_fade_objects: float
     gpencil_fade_layer: float

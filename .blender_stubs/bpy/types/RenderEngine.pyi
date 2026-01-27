@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -16,7 +16,7 @@ class RenderEngine(bpy_struct):
     is_animation: bool
     is_preview: bool
     camera_override: 'Object'
-    layer_override: bool
+    layer_override: list[bool]
     resolution_x: int
     resolution_y: int
     temporary_directory: str

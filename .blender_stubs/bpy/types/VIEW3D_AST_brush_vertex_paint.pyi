@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -14,7 +14,7 @@ from .AssetShelf import AssetShelf
 class VIEW3D_AST_brush_vertex_paint(View3DAssetShelf, AssetShelf):
     bl_idname: str
     bl_space_type: str
-    bl_options: str
+    bl_options: set[str]
     bl_activate_operator: str
     bl_drag_operator: str
     bl_default_preview_size: int

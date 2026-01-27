@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -32,6 +32,6 @@ class ClothModifier(Modifier):
     collision_settings: 'ClothCollisionSettings'
     solver_result: 'ClothSolverResult'
     point_cache: 'PointCache'
-    hair_grid_min: float
-    hair_grid_max: float
-    hair_grid_resolution: int
+    hair_grid_min: list[float]
+    hair_grid_max: list[float]
+    hair_grid_resolution: list[int]

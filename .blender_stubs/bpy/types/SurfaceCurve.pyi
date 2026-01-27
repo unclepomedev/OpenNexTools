@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -76,8 +76,8 @@ class SurfaceCurve(Curve):
     use_fill_caps: bool
     use_map_taper: bool
     use_auto_texspace: bool
-    texspace_location: float
-    texspace_size: float
+    texspace_location: list[float]
+    texspace_size: list[float]
     materials: bpy_prop_collection['Material']
     bevel_factor_start: float
     bevel_factor_end: float

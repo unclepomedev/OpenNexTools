@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -19,4 +19,4 @@ class StudioLight(bpy_struct):
     name: str
     path: str
     solid_lights: bpy_prop_collection['UserSolidLight']
-    light_ambient: float
+    light_ambient: list[float]

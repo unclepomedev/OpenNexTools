@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -20,8 +20,8 @@ class DepsgraphObjectInstance(bpy_struct):
     instance_object: 'Object'
     parent: 'Object'
     particle_system: 'ParticleSystem'
-    persistent_id: int
+    persistent_id: list[int]
     random_id: int
-    matrix_world: float
-    orco: float
-    uv: float
+    matrix_world: list[float]
+    orco: list[float]
+    uv: list[float]

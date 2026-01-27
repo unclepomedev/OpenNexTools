@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -53,8 +53,8 @@ class GreasePencil(ID):
     ghost_before_range: int
     ghost_after_range: int
     use_ghost_custom_colors: bool
-    before_color: float
-    after_color: float
+    before_color: list[float]
+    after_color: list[float]
     onion_mode: str
     onion_keyframe_type: str
     use_onion_fade: bool

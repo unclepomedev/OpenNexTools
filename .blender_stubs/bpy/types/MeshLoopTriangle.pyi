@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -11,11 +11,11 @@ from .bpy_prop_collection import bpy_prop_collection
 
 from .bpy_struct import bpy_struct
 class MeshLoopTriangle(bpy_struct):
-    vertices: int
-    loops: int
+    vertices: list[int]
+    loops: list[int]
     polygon_index: int
-    normal: float
-    split_normals: float
+    normal: list[float]
+    split_normals: list[float]
     area: float
     index: int
     material_index: int

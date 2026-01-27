@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -16,6 +16,5 @@ class SpreadsheetTableIDGeometry(SpreadsheetTableID):
     object_eval_state: str
     geometry_component_type: str
     attribute_domain: str
-    geometry_item_type: str
     viewer_path: 'ViewerPath'
     layer_index: int

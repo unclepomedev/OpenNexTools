@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -16,8 +16,8 @@ class MovieTrackingCamera(bpy_struct):
     focal_length: float
     focal_length_pixels: float
     units: str
-    principal_point: float
-    principal_point_pixels: float
+    principal_point: list[float]
+    principal_point_pixels: list[float]
     k1: float
     k2: float
     k3: float
@@ -25,8 +25,6 @@ class MovieTrackingCamera(bpy_struct):
     division_k2: float
     nuke_k1: float
     nuke_k2: float
-    nuke_p1: float
-    nuke_p2: float
     brown_k1: float
     brown_k2: float
     brown_k3: float

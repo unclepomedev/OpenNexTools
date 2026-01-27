@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -17,5 +17,3 @@ class SpacePreferences(Space):
     show_region_ui: bool
     filter_type: str
     filter_text: str
-    tab_search_results: bool
-    search_filter: str

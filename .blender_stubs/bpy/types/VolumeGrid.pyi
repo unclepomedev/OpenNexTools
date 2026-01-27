@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -14,7 +14,7 @@ class VolumeGrid(bpy_struct):
     name: str
     data_type: str
     channels: int
-    matrix_object: float
+    matrix_object: list[float]
     is_loaded: bool
     def load(self, *args, **kwargs) -> Any: ...
     def unload(self, *args, **kwargs) -> Any: ...

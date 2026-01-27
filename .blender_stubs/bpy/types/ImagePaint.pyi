@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -26,14 +26,13 @@ class ImagePaint(Paint):
     show_brush_on_surface: bool
     show_low_resolution: bool
     use_sculpt_delay_updates: bool
-    show_bvh_nodes: bool
     use_symmetry_x: bool
     use_symmetry_y: bool
     use_symmetry_z: bool
     use_symmetry_feather: bool
     cavity_curve: 'CurveMapping'
     use_cavity: bool
-    tile_offset: float
+    tile_offset: list[float]
     tile_x: bool
     tile_y: bool
     tile_z: bool
@@ -49,12 +48,12 @@ class ImagePaint(Paint):
     stencil_image: 'Image'
     canvas: 'Image'
     clone_image: 'Image'
-    stencil_color: float
+    stencil_color: list[float]
     dither: float
     use_clone_layer: bool
     seam_bleed: int
     normal_angle: int
-    screen_grab_size: int
+    screen_grab_size: list[int]
     mode: str
     interpolation: str
     missing_uvs: bool
@@ -62,5 +61,5 @@ class ImagePaint(Paint):
     missing_stencil: bool
     missing_texture: bool
     clone_alpha: float
-    clone_offset: float
+    clone_offset: list[float]
     def detect_data(self, *args, **kwargs) -> Any: ...

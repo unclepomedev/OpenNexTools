@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -45,7 +45,7 @@ class GeometryNodeTree(NodeTree):
     preview: 'ImagePreview'
     color_tag: str
     default_group_node_width: int
-    view_center: float
+    view_center: list[float]
     description: str
     animation_data: 'AnimData'
     nodes: bpy_prop_collection['Node']
@@ -59,7 +59,6 @@ class GeometryNodeTree(NodeTree):
     bl_icon: str
     bl_use_group_interface: bool
     is_tool: bool
-    node_tool_idname: str
     is_modifier: bool
     is_mode_object: bool
     is_mode_edit: bool

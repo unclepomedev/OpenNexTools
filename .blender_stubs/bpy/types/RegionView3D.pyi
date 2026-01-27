@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -14,17 +14,17 @@ class RegionView3D(bpy_struct):
     lock_rotation: bool
     show_sync_view: bool
     use_box_clip: bool
-    perspective_matrix: float
-    window_matrix: float
-    view_matrix: float
+    perspective_matrix: list[float]
+    window_matrix: list[float]
+    view_matrix: list[float]
     view_perspective: str
     is_perspective: bool
     is_orthographic_side_view: bool
     use_clip_planes: bool
-    clip_planes: float
-    view_location: float
-    view_rotation: float
+    clip_planes: list[float]
+    view_location: list[float]
+    view_rotation: list[float]
     view_distance: float
     view_camera_zoom: float
-    view_camera_offset: float
+    view_camera_offset: list[float]
     def update(self, *args, **kwargs) -> Any: ...

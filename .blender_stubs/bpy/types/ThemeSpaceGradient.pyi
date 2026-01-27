@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -13,9 +13,9 @@ from .bpy_struct import bpy_struct
 from .ThemeGradientColors import ThemeGradientColors
 class ThemeSpaceGradient(bpy_struct):
     gradients: 'ThemeGradientColors'
-    title: float
-    text: float
-    text_hi: float
-    header: float
-    header_text: float
-    header_text_hi: float
+    title: list[float]
+    text: list[float]
+    text_hi: list[float]
+    header: list[float]
+    header_text: list[float]
+    header_text_hi: list[float]

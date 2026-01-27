@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -48,5 +48,5 @@ class SpaceSequenceEditor(Space):
     preview_overlay: 'SequencerPreviewOverlay'
     timeline_overlay: 'SequencerTimelineOverlay'
     cache_overlay: 'SequencerCacheOverlay'
-    cursor_location: float
+    cursor_location: list[float]
     zoom_percentage: float

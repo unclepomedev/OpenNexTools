@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -60,16 +60,16 @@ class Image(ID):
     generated_width: int
     generated_height: int
     use_generated_float: bool
-    generated_color: float
-    display_aspect: float
+    generated_color: list[float]
+    display_aspect: list[float]
     render_slots: bpy_prop_collection['RenderSlot']
     tiles: bpy_prop_collection['UDIMTile']
     has_data: bool
     depth: int
-    size: int
-    resolution: float
+    size: list[int]
+    resolution: list[float]
     frame_duration: int
-    pixels: float
+    pixels: list[float]
     channels: int
     is_float: bool
     colorspace_settings: 'ColorManagedInputColorspaceSettings'

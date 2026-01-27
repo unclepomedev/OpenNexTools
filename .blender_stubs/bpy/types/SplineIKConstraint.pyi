@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -29,7 +29,7 @@ class SplineIKConstraint(Constraint):
     error_rotation: float
     target: 'Object'
     chain_count: int
-    joint_bindings: float
+    joint_bindings: list[float]
     use_chain_offset: bool
     use_even_divisions: bool
     use_curve_radius: bool

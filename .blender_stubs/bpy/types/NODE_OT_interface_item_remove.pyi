@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -16,7 +16,7 @@ from .OperatorOptions import OperatorOptions
 from .OperatorProperties import OperatorProperties
 from .UILayout import UILayout
 class NODE_OT_interface_item_remove(NodeInterfaceOperator, Operator):
-    """Remove selected items from the interface"""
+    """Remove active item from the interface"""
     name: str
     properties: 'OperatorProperties'
     has_reports: bool
@@ -25,7 +25,7 @@ class NODE_OT_interface_item_remove(NodeInterfaceOperator, Operator):
     bl_translation_context: str
     bl_description: str
     bl_undo_group: str
-    bl_options: str
+    bl_options: set[str]
     bl_cursor_pending: str
     layout: 'UILayout'
     options: 'OperatorOptions'

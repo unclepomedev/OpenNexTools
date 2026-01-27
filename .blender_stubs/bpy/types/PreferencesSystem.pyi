@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -24,7 +24,7 @@ class PreferencesSystem(bpy_struct):
     use_region_overlap: bool
     viewport_aa: str
     solid_lights: bpy_prop_collection['UserSolidLight']
-    light_ambient: float
+    light_ambient: list[float]
     use_studio_light_edit: bool
     gl_clip_alpha: float
     image_draw_method: str

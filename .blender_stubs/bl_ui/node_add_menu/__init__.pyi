@@ -1,4 +1,4 @@
-# Blender Probe Generated Stub for Blender 5.1.0 Alpha
+# Blender Probe Generated Stub for Blender 5.0.1
 # noinspection PyPep8Naming
 # noinspection PyUnresolvedReferences
 # noqa: N801
@@ -203,7 +203,7 @@ class NODE_MT_layout_base:
     def values(*args, **kwargs) -> Any: ...
 
 class NodeMenu:
-    """A base-class defining the shared methods for AddNodeMenu and SwapNodeMenu."""
+    """A baseclass defining the shared methods for AddNodeMenu and SwapNodeMenu."""
     def __init__(self, /, *args, **kwargs) -> Any: ...
     def append(draw_func) -> Any: ...
     def as_pointer(*args, **kwargs) -> Any: ...
