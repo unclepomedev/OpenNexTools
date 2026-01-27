@@ -17,6 +17,8 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.11"
 
       - name: Install dependencies
         run: uv sync --all-extras --dev
@@ -41,6 +43,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.11"
+          enable-cache: true
+
+      - name: Install Linux Dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libx11-dev libxxf86vm-dev libxcursor-dev libxi-dev libxrandr-dev libxinerama-dev libglew-dev
+
+      - name: Install dependencies
+        run: uv sync --dev
+
+      - name: Build Rust Extension
+        run: uv run maturin develop --release
+
       - name: Setup Blup & Blender
         uses: unclepomedev/setup-blup@v0
         with:
@@ -52,4 +75,3 @@ jobs:
           BLENDER_PROBE_PROJECT_ROOT: ${{ github.workspace }}
         run: |
           blup run -- --background --factory-startup --python-exit-code 1 --python tests/run_tests.py -- tests
-            
