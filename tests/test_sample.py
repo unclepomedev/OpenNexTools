@@ -39,7 +39,7 @@ class TestSampleOperator(unittest.TestCase):
 
         # 2. Check side effects (Logic verification)
         # The name should have the suffix appended
-        self.assertEqual(self.test_obj.name, "TestCube_processed")
+        self.assertEqual(self.test_obj.name, "TestCube_processed_5")
 
         # The custom property should be set to True
         self.assertTrue(self.test_obj.get("is_processed"))

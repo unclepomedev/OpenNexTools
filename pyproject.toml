@@ -10,12 +10,17 @@ dependencies = ["pip"] # pip is for suppressing PyCharm warning
 
 [dependency-groups]
 dev = [
+    "maturin>=1.11.5",
     "ruff>=0.14.11",
 ]
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+python-source = "."
+module-name = "nextools.nt_rust_core"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

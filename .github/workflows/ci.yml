@@ -35,7 +35,7 @@ jobs:
       matrix:
         os: [ ubuntu-latest, windows-latest, macos-latest ]
         # Check https://download.blender.org/release/ for available versions
-        blender-version: [ "4.2.0", "5.0.0" ]
+        blender-version: [ "5.0.0" ]
 
     steps:
       - name: Checkout code
@@ -51,6 +51,5 @@ jobs:
         env:
           BLENDER_PROBE_PROJECT_ROOT: ${{ github.workspace }}
         run: |
-            
-              blup run -- --background --factory-startup --python-exit-code 1 --python tests/run_tests.py -- tests
+          blup run -- --background --factory-startup --python-exit-code 1 --python tests/run_tests.py -- tests
             

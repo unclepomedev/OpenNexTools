@@ -20,7 +20,9 @@ class OBJECT_OT_sample_operator(bpy.types.Operator):
         # Logic to be tested:
         # 1. Modify the object name
         original_name = obj.name
-        obj.name = f"{original_name}_processed"
+        from .rust_bridge import solve_heavy_math
+        ans = solve_heavy_math(1, 4)
+        obj.name = f"{original_name}_processed_{ans}"
 
         # 2. Add a custom property tag
         obj["is_processed"] = True

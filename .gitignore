@@ -22,3 +22,9 @@ quit.blend
 # OS
 .DS_Store
 Thumbs.db
+
+/target
+*.so
+*.pyd
+*.dylib
+*.dll

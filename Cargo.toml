@@ -1,0 +1,11 @@
+[package]
+name = "nextools"
+version = "0.0.1"
+edition = "2024"
+
+[lib]
+name = "nt_rust_core"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.27", features = ["extension-module"] }
