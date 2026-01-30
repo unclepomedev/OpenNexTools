@@ -40,7 +40,11 @@ def force_clean_pycache(root_path):
                 shutil.rmtree(pycache_path)
                 count += 1
             except Exception as e:
-                tc_print("message", text=f"Failed to remove cache: {pycache_path} ({e})", status="WARNING")
+                tc_print(
+                    "message",
+                    text=f"Failed to remove cache: {pycache_path} ({e})",
+                    status="WARNING",
+                )
             dirs.remove("__pycache__")
 
     if count > 0:
@@ -170,7 +174,7 @@ if __name__ == "__main__":
         target_dir = os.getcwd()
 
         if "--" in argv:
-            args_after_dash = argv[argv.index("--") + 1:]
+            args_after_dash = argv[argv.index("--") + 1 :]
             if args_after_dash:
                 target_dir = args_after_dash[0]
             else:
