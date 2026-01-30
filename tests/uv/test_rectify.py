@@ -76,6 +76,7 @@ class TestRectifyLogic(unittest.TestCase):
         me = obj.data
         bm = bmesh.from_edit_mesh(me)
         bm.faces.ensure_lookup_table()
+        self.bm = bm
 
         bmesh.ops.triangulate(bm, faces=[bm.faces[0]])
         bm.faces.ensure_lookup_table()
