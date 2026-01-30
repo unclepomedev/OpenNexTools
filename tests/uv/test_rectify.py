@@ -10,10 +10,10 @@ class TestRectifyLogic(unittest.TestCase):
     def setUp(self):
         bpy.ops.wm.read_homefile(use_empty=True)
 
-        bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, align='WORLD')
+        bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, align="WORLD")
         self.obj = bpy.context.active_object
         self.obj.name = "TestQuad"
-        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.object.mode_set(mode="EDIT")
 
         self.me = self.obj.data
         self.bm = bmesh.from_edit_mesh(self.me)
@@ -37,12 +37,7 @@ class TestRectifyLogic(unittest.TestCase):
         face = bm.faces[0]
         face.select = True
 
-        distorted_uvs = [
-            (0.2, 0.1),
-            (0.9, 0.3),
-            (0.8, 0.8),
-            (0.1, 0.9)
-        ]
+        distorted_uvs = [(0.2, 0.1), (0.9, 0.3), (0.8, 0.8), (0.1, 0.9)]
 
         for loop, uv_coord in zip(face.loops, distorted_uvs):
             loop[uv_layer].uv = uv_coord
@@ -50,7 +45,7 @@ class TestRectifyLogic(unittest.TestCase):
         bmesh.update_edit_mesh(self.me)
         success = align_uv_rectify(self.obj, bm, uv_layer.name)
         self.assertTrue(success, "Rectify function should return True")
-        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode="OBJECT")
 
         uv_coords = []
         for loop in self.me.polygons[0].loop_indices:

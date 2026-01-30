@@ -38,7 +38,7 @@ def align_uv_rectify(obj: Object, bm: BMesh, uv_layer_name: str):
     bmesh.update_edit_mesh(mesh_data)
 
     try:
-        bpy.ops.uv.follow_active_quads(mode='LENGTH_AVERAGE')
+        bpy.ops.uv.follow_active_quads(mode="LENGTH_AVERAGE")
     except RuntimeError:
         print("Failed to run Follow Active Quads. Selection might not be contiguous.")
         return False
@@ -47,8 +47,8 @@ def align_uv_rectify(obj: Object, bm: BMesh, uv_layer_name: str):
     uv_layer = returned_bmesh.loops.layers.uv.get(uv_layer_name)
     selected_faces = [f for f in returned_bmesh.faces if f.select]
 
-    min_x, max_x = float('inf'), float('-inf')
-    min_y, max_y = float('inf'), float('-inf')
+    min_x, max_x = float("inf"), float("-inf")
+    min_y, max_y = float("inf"), float("-inf")
 
     has_verts = False
     for face in selected_faces:
@@ -64,7 +64,8 @@ def align_uv_rectify(obj: Object, bm: BMesh, uv_layer_name: str):
                 max_y = v
             has_verts = True
 
-    if not has_verts: return True
+    if not has_verts:
+        return True
 
     width = max_x - min_x
     height = max_y - min_y

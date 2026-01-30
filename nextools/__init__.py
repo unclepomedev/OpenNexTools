@@ -5,10 +5,7 @@ from .ops import uv
 from .ui import panel
 import bpy
 
-_classes = [
-    uv.UV_OT_NextoolsLiteRectify,
-    panel.UV_PT_NextoolsPanel
-]
+_classes = [uv.UV_OT_NextoolsLiteRectify, panel.UV_PT_NextoolsPanel]
 
 _modules = [
     operators,
