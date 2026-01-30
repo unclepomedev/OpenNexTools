@@ -25,7 +25,10 @@ class TestRectifyLogic(unittest.TestCase):
 
     def tearDown(self):
         if self.bm:
-            self.bm.free()
+            if self.bm and self.bm.is_valid:
+                self.bm.free()
+            if bpy.context.active_object:
+                bpy.ops.object.mode_set(mode="OBJECT")
 
     def test_rectify_distorted_quad(self):
         """

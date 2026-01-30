@@ -15,6 +15,9 @@ def align_uv_rectify(obj: Object, bm: BMesh, uv_layer_name: str):
     """
     mesh_data = obj.data
     uv_layer = bm.loops.layers.uv.get(uv_layer_name)
+    if uv_layer is None:
+        print(f"Error: UV layer '{uv_layer_name}' not found.")
+        return False
 
     selected_faces = [f for f in bm.faces if f.select]
     if not selected_faces:
