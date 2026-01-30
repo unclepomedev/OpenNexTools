@@ -8,10 +8,8 @@ def align_uv_rectify(obj: Object, bm: BMesh, uv_layer_name: str):
     """
     Rectify logic as a wrapper for Blender's native 'follow_active_quads'.
 
-    Algorithm:
-    1. Force-aligns the active face to a perfect square in UV space.
-    2. Performs the standard unwrap using the aligned face as a reference.
-    3. Normalizes the resulting UV coordinates to fit within the 0-1 range.
+    NOTE: Only processes Quads. Triangles and N-gons are explicitly excluded
+    to prevent UV layout distortion during normalization.
     """
     mesh_data = obj.data
     uv_layer = bm.loops.layers.uv.get(uv_layer_name)
@@ -19,18 +17,17 @@ def align_uv_rectify(obj: Object, bm: BMesh, uv_layer_name: str):
         print(f"Error: UV layer '{uv_layer_name}' not found.")
         return False
 
-    selected_faces = [f for f in bm.faces if f.select]
-    if not selected_faces:
+    all_selected = [f for f in bm.faces if f.select]
+    target_faces = [f for f in all_selected if len(f.verts) == 4]
+
+    if not target_faces:
         return False
 
     active_face = bm.faces.active
-    if not active_face or not active_face.select:
-        active_face = selected_faces[0]
-        bm.faces.active = active_face
 
-    if len(active_face.verts) != 4:
-        print("Error: Active face must be a Quad.")
-        return False
+    if not active_face or active_face not in target_faces:
+        active_face = target_faces[0]
+        bm.faces.active = active_face
 
     loops = active_face.loops
     loops[0][uv_layer].uv = (0, 0)
@@ -41,14 +38,17 @@ def align_uv_rectify(obj: Object, bm: BMesh, uv_layer_name: str):
     bmesh.update_edit_mesh(mesh_data)
 
     try:
-        bpy.ops.uv.follow_active_quads(mode="LENGTH_AVERAGE")
+        bpy.ops.uv.follow_active_quads(mode="EVEN")
     except RuntimeError:
-        print("Failed to run Follow Active Quads. Selection might not be contiguous.")
         return False
 
     returned_bmesh: BMesh = bmesh.from_edit_mesh(mesh_data)
     uv_layer = returned_bmesh.loops.layers.uv.get(uv_layer_name)
-    selected_faces = [f for f in returned_bmesh.faces if f.select]
+
+    selected_faces = [f for f in returned_bmesh.faces if f.select and len(f.verts) == 4]
+
+    if not selected_faces:
+        return True
 
     min_x, max_x = float("inf"), float("-inf")
     min_y, max_y = float("inf"), float("-inf")
