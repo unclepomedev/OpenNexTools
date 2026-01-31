@@ -2,10 +2,15 @@
 
 from . import operators
 from .ops import uv
+from .ops import color_id
 from .ui import panel
 import bpy
 
-_classes = [uv.UV_OT_NextoolsLiteRectify, panel.UV_PT_NextoolsPanel]
+_classes = [
+    uv.UV_OT_NextoolsLiteRectify,
+    color_id.UV_OT_NextoolsBakeColorID,
+    panel.UV_PT_NextoolsPanel,
+]
 
 _modules = [
     operators,
