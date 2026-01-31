@@ -2,6 +2,7 @@
 
 import bpy
 from nextools.ops.uv import UV_OT_NextoolsLiteRectify
+from nextools.ops.color_id import UV_OT_NextoolsBakeColorID
 
 
 class UV_PT_NextoolsPanel(bpy.types.Panel):
@@ -16,3 +17,7 @@ class UV_PT_NextoolsPanel(bpy.types.Panel):
         col = layout.column(align=True)
 
         col.operator(UV_OT_NextoolsLiteRectify.bl_idname, text="Rectify", icon="GRID")
+
+        col.separator()
+        col.label(text="Baking")
+        col.operator(UV_OT_NextoolsBakeColorID.bl_idname, text="Color ID", icon="GROUP_VCOL")
