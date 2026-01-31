@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 import bpy
 from .. import rust_bridge
 
@@ -63,6 +65,6 @@ def apply_color_id_to_mesh(obj: bpy.types.Object) -> int:
 
     attr_index = mesh.color_attributes.find(color_layer_name)
     if attr_index != -1:
-        mesh.attributes.active_color_index = attr_index
+        mesh.color_attributes.active_color_index = attr_index
 
     return num_faces

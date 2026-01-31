@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 use crate::algorithm::dsu::Dsu;
 use std::collections::{HashMap, HashSet};
 

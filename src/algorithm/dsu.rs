@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 //! A Disjoint set union (DSU) with union by size and path compression.
 //! Original source: https://github.com/rust-lang-ja/ac-library-rs/blob/master/src/dsu.rs
 

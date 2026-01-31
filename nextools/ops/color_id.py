@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 import bpy
 from ..logic import color_id as logic_color_id
 
@@ -52,6 +54,8 @@ class UV_OT_NextoolsBakeColorID(bpy.types.Operator):
                     pass
 
     def _switch_viewport_shading(self, context, attr_name):
+        if not context.screen:
+            return
         for area in context.screen.areas:
             if area.type == "VIEW_3D":
                 for space in area.spaces:

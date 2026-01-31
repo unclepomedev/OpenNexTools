@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 try:
     from . import nt_rust_core
 except ImportError as e:

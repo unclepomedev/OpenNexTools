@@ -64,6 +64,7 @@ class TestColorIDLogic(unittest.TestCase):
 
         self.assertIn("Active UV layer is required", str(cm.exception))
 
+    @unittest.skipIf(bpy.app.background, "ops.uv.smart_project requires UI context")
     def test_complex_uv_islands(self):
         """Verify execution with split UV islands (seams)."""
         obj = self._setup_mesh("CUBE")
