@@ -3,7 +3,7 @@
 import bpy
 from .. import rust_bridge
 
-
+# TODO: Using NumPy and minimal-copy would allow for further optimization.
 def apply_color_id_to_mesh(obj: bpy.types.Object) -> int:
     """
     Bakes Color IDs onto the specified object's mesh using the Rust backend.
