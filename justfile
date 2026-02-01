@@ -27,10 +27,11 @@ lint:
 ty:
     uv run ty check
 
+export BLENDER_PROBE_PROJECT_ROOT := justfile_directory()
 test:
     cargo test --release
     uv run maturin develop --release
-    BLENDER_PROBE_PROJECT_ROOT={{justfile_directory()}} blup run -- --background --factory-startup --python-exit-code 1 --python tests/run_tests.py -- tests
+    blup run -- --background --factory-startup --python-exit-code 1 --python tests/run_tests.py -- tests
 
 test-rs:
     cargo test
