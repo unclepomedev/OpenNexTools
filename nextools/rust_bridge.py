@@ -7,10 +7,6 @@ except ImportError as e:
     raise e
 
 
-def solve_heavy_math(a: int, b: int) -> int:
-    return nt_rust_core.solve_heavy_math(a, b)
-
-
 def bake_color_id_all(
     num_faces: int,
     poly_loop_starts: list[int],

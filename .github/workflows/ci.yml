@@ -1,5 +1,3 @@
-# GitHub Actions reference: https://help.github.com/en/actions
-
 name: CI
 
 on:
@@ -13,21 +11,32 @@ jobs:
     name: Lint & Format
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
 
       - name: Install uv
         uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.11"
+          enable-cache: true
+
+      - name: Setup Just
+        uses: extractions/setup-just@v3
 
       - name: Install dependencies
-        run: uv sync --all-extras --dev
+        run: just sync
 
-      - name: Run Ruff (Lint)
-        run: uv run ruff check nextools
+      - name: Run Lint
+        run: just lint
 
-      - name: Run Ruff (Format)
-        run: uv run ruff format --check nextools
+      - name: Run Type Check
+        run: just ty
 
   test:
     name: Test on ${{ matrix.os }} - Blender ${{ matrix.blender-version }}
@@ -36,21 +45,21 @@ jobs:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest, windows-latest, macos-latest ]
-        # Check https://download.blender.org/release/ for available versions
         blender-version: [ "5.0.1" ]
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@stable
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.11"
           enable-cache: true
+
+      - uses: extractions/setup-just@v3
 
       - name: Install Linux Dependencies
         if: runner.os == 'Linux'
@@ -59,10 +68,7 @@ jobs:
           sudo apt-get install -y libx11-dev libxxf86vm-dev libxcursor-dev libxi-dev libxrandr-dev libxinerama-dev libglew-dev
 
       - name: Install dependencies
-        run: uv sync --dev
-
-      - name: Build Rust Extension
-        run: uv run maturin develop --release
+        run: just sync
 
       - name: Setup Blup & Blender
         uses: unclepomedev/setup-blup@v0
@@ -70,8 +76,7 @@ jobs:
           blender-version: ${{ matrix.blender-version }}
           cache: true
 
-      - name: Run Tests
+      - name: Run All Tests
         env:
           BLENDER_PROBE_PROJECT_ROOT: ${{ github.workspace }}
-        run: |
-          blup run -- --background --factory-startup --python-exit-code 1 --python tests/run_tests.py -- tests
+        run: just test

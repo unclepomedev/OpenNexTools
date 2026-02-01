@@ -6,11 +6,6 @@ use pyo3::exceptions::PyValueError;
 use pyo3::prelude::*;
 
 #[pyfunction]
-fn solve_heavy_math(a: usize, b: usize) -> PyResult<usize> {
-    Ok(a + b)
-}
-
-#[pyfunction]
 fn bake_color_id_all(
     num_faces: usize,
     poly_loop_starts: Vec<usize>,
@@ -66,7 +61,6 @@ fn bake_color_id_all(
 
 #[pymodule]
 fn nt_rust_core(m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add_function(wrap_pyfunction!(solve_heavy_math, m)?)?;
     m.add_function(wrap_pyfunction!(bake_color_id_all, m)?)?;
     Ok(())
 }
