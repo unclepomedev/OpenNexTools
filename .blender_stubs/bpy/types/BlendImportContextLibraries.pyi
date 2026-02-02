@@ -10,5 +10,8 @@ from typing import Any, Optional, Union, Sequence, Callable, Iterator
 from .bpy_prop_collection import bpy_prop_collection
 
 from .bpy_struct import bpy_struct
+from .BlendImportContextLibrary import BlendImportContextLibrary
 class BlendImportContextLibraries(bpy_struct):
-    pass
+    def __iter__(self) -> Iterator['BlendImportContextLibrary']: ...
+    def __getitem__(self, key: Union[str, int]) -> 'BlendImportContextLibrary': ...
+    def __len__(self) -> int: ...
