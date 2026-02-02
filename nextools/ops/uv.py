@@ -78,8 +78,7 @@ class UV_OT_NextoolsStraight(bpy.types.Operator):
         selected_faces = [f for f in bm.faces if f.select]
 
         if selected_faces:
-            keep_bounds = context.scene.nextools_settings.rectify_keep_bounds
-            success = align_uv_rectify(obj, bm, uv_layer_name, keep_bounds=keep_bounds)
+            success = align_uv_rectify(obj, bm, uv_layer_name, keep_bounds=True)
             if not success:
                 self.report({"WARNING"}, "Rectify failed. Select connected Quad faces.")
                 return {"CANCELLED"}
