@@ -12,6 +12,12 @@ class UV_OT_NextoolsLiteRectify(bpy.types.Operator):
     bl_label = "Rectify"
     bl_options = {"REGISTER", "UNDO"}
 
+    keep_bounds: bpy.props.BoolProperty(
+        name="Keep Bounds",
+        description="Scale the rectified UV island to match its original bounding box",
+        default=False,
+    )
+
     @classmethod
     def poll(cls, context):
         obj = context.active_object
@@ -27,8 +33,12 @@ class UV_OT_NextoolsLiteRectify(bpy.types.Operator):
             self.report({"ERROR"}, "No UV Map found")
             return {"CANCELLED"}
 
+        # Use settings if the operator is called from UI (no property set)
+        if not self.properties.is_property_set("keep_bounds"):
+            self.keep_bounds = context.scene.nextools_settings.rectify_keep_bounds
+
         try:
-            success = align_uv_rectify(obj, bm, uv_layer_name)
+            success = align_uv_rectify(obj, bm, uv_layer_name, keep_bounds=self.keep_bounds)
             if not success:
                 self.report({"WARNING"}, "Select connected Quad faces.")
                 return {"CANCELLED"}

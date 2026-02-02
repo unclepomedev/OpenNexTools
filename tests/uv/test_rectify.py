@@ -46,7 +46,7 @@ class TestRectifyLogic(unittest.TestCase):
 
         distorted_uvs = [(0.2, 0.1), (0.9, 0.3), (0.8, 0.8), (0.1, 0.9)]
 
-        for loop, uv_coord in zip(face.loops, distorted_uvs):
+        for loop, uv_coord in zip(face.loops, distorted_uvs, strict=True):
             loop[uv_layer].uv = uv_coord
 
         bmesh.update_edit_mesh(self.me)
@@ -103,6 +103,40 @@ class TestRectifyLogic(unittest.TestCase):
 
         self.assertAlmostEqual(max(xs) - min(xs), 1.0, places=3)
         self.assertAlmostEqual(max(ys) - min(ys), 1.0, places=3)
+
+    def test_rectify_keep_bounds(self):
+        """
+        Verify that Rectify with keep_bounds=True maintains the original bounding box.
+        """
+        self._setup_mesh("QUAD")
+        bm = self.bm
+        uv_layer = self.uv_layer
+
+        face = bm.faces[0]
+        face.select = True
+
+        # Original bounds: (0.2, 0.1) to (0.9, 0.9)
+        distorted_uvs = [(0.2, 0.1), (0.9, 0.3), (0.8, 0.9), (0.3, 0.8)]
+        orig_min_x, orig_max_x = 0.2, 0.9
+        orig_min_y, orig_max_y = 0.1, 0.9
+
+        for loop, uv_coord in zip(face.loops, distorted_uvs, strict=True):
+            loop[uv_layer].uv = uv_coord
+
+        bmesh.update_edit_mesh(self.me)
+        success = align_uv_rectify(self.obj, bm, uv_layer.name, keep_bounds=True)
+        self.assertTrue(success)
+
+        bpy.ops.object.mode_set(mode="OBJECT")
+
+        uv_coords = [Vector(d.uv) for d in self.me.uv_layers.active.data]
+        xs = [uv.x for uv in uv_coords]
+        ys = [uv.y for uv in uv_coords]
+
+        self.assertAlmostEqual(min(xs), orig_min_x, places=4)
+        self.assertAlmostEqual(max(xs), orig_max_x, places=4)
+        self.assertAlmostEqual(min(ys), orig_min_y, places=4)
+        self.assertAlmostEqual(max(ys), orig_max_y, places=4)
 
 
 if __name__ == "__main__":
