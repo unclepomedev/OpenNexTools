@@ -46,7 +46,7 @@ class TestRectifyLogic(unittest.TestCase):
 
         distorted_uvs = [(0.2, 0.1), (0.9, 0.3), (0.8, 0.8), (0.1, 0.9)]
 
-        for loop, uv_coord in zip(face.loops, distorted_uvs):
+        for loop, uv_coord in zip(face.loops, distorted_uvs, strict=True):
             loop[uv_layer].uv = uv_coord
 
         bmesh.update_edit_mesh(self.me)
@@ -120,7 +120,7 @@ class TestRectifyLogic(unittest.TestCase):
         orig_min_x, orig_max_x = 0.2, 0.9
         orig_min_y, orig_max_y = 0.1, 0.9
 
-        for loop, uv_coord in zip(face.loops, distorted_uvs):
+        for loop, uv_coord in zip(face.loops, distorted_uvs, strict=True):
             loop[uv_layer].uv = uv_coord
 
         bmesh.update_edit_mesh(self.me)

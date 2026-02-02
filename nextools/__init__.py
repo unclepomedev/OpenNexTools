@@ -29,6 +29,7 @@ def register():
 
 
 def unregister():
+    if hasattr(bpy.types.Scene, "nextools_settings"):
+        del bpy.types.Scene.nextools_settings
     for cls in reversed(_classes):
         bpy.utils.unregister_class(cls)
-    del bpy.types.Scene.nextools_settings
