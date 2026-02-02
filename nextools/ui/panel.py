@@ -16,7 +16,11 @@ class UV_PT_NextoolsPanel(bpy.types.Panel):
         layout = self.layout
         col = layout.column(align=True)
 
-        col.operator(UV_OT_NextoolsLiteRectify.bl_idname, text="Rectify", icon="GRID")
+        row = col.row(align=True)
+        row.operator(UV_OT_NextoolsLiteRectify.bl_idname, text="Rectify", icon="GRID")
+        row.prop(
+            context.scene.nextools_settings, "rectify_keep_bounds", text="", icon="PIVOT_BOUNDBOX"
+        )
 
         col.separator()
         col.label(text="Baking")
