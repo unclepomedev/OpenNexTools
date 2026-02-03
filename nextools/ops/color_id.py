@@ -4,7 +4,7 @@ import bpy
 from ..logic import color_id as logic_color_id
 
 
-class UV_OT_NextoolsBakeColorID(bpy.types.Operator):
+class UV_OT_nextools_bake_color_id(bpy.types.Operator):
     """Bake Color ID Map using Rust (High Performance)"""
 
     bl_idname = "uv.nextools_bake_color_id"
@@ -33,7 +33,7 @@ class UV_OT_NextoolsBakeColorID(bpy.types.Operator):
             processed_count = logic_color_id.apply_color_id_to_mesh(obj)
 
             if self.auto_switch_view:
-                self._switch_viewport_shading(context, "Color_ID")
+                self._switch_viewport_shading(context)
 
             self.report({"INFO"}, f"Color ID Baked: {processed_count} faces processed.")
             return {"FINISHED"}
@@ -50,10 +50,13 @@ class UV_OT_NextoolsBakeColorID(bpy.types.Operator):
             if original_mode != "OBJECT" and obj:
                 try:
                     bpy.ops.object.mode_set(mode=original_mode)
-                except Exception:
-                    pass
+                except RuntimeError as ex:
+                    self.report({"DEBUG"}, f"Mode restore blocked by context: {ex}")
+                except Exception as ex:
+                    self.report({"DEBUG"}, f"Unexpected error during mode restore: {ex}")
 
-    def _switch_viewport_shading(self, context, attr_name):
+    @staticmethod
+    def _switch_viewport_shading(context):
         if not context.screen:
             return
         for area in context.screen.areas:

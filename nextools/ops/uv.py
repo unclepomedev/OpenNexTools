@@ -6,7 +6,28 @@ from nextools.logic.uv.rectify import align_uv_rectify
 from nextools.logic.uv.straight import align_uv_straight
 
 
-class UV_OT_NextoolsLiteRectify(bpy.types.Operator):
+class NextoolsUVOperator:
+    """Base class for UV operators to avoid boilerplate"""
+
+    @classmethod
+    def poll(cls, context):
+        obj = context.active_object
+        return obj and obj.type == "MESH" and obj.mode == "EDIT"
+
+    @staticmethod
+    def get_bmesh_and_uv(context):
+        obj = context.active_object
+        me = obj.data
+        bm = bmesh.from_edit_mesh(me)
+
+        uv_layer_active = me.uv_layers.active
+        if not uv_layer_active:
+            return obj, me, bm, None
+
+        return obj, me, bm, uv_layer_active.name
+
+
+class UV_OT_nextools_lite_rectify(bpy.types.Operator, NextoolsUVOperator):
     """Rectify: Unwraps selected faces into a grid"""
 
     bl_idname = "uv.nextools_rectify"
@@ -19,17 +40,8 @@ class UV_OT_NextoolsLiteRectify(bpy.types.Operator):
         default=False,
     )
 
-    @classmethod
-    def poll(cls, context):
-        obj = context.active_object
-        return obj and obj.type == "MESH" and obj.mode == "EDIT"
-
     def execute(self, context):
-        obj = context.active_object
-        me = obj.data
-        bm = bmesh.from_edit_mesh(me)
-
-        uv_layer_name = me.uv_layers.active.name if me.uv_layers.active else None
+        obj, me, bm, uv_layer_name = self.get_bmesh_and_uv(context)
         if not uv_layer_name:
             self.report({"ERROR"}, "No UV Map found")
             return {"CANCELLED"}
@@ -50,27 +62,19 @@ class UV_OT_NextoolsLiteRectify(bpy.types.Operator):
             traceback.print_exc()
             return {"CANCELLED"}
 
+        bmesh.update_edit_mesh(me)
         return {"FINISHED"}
 
 
-class UV_OT_NextoolsStraight(bpy.types.Operator):
+class UV_OT_nextools_straight(bpy.types.Operator, NextoolsUVOperator):
     """Straight: Straighten selected edges, or rectify if faces are selected"""
 
     bl_idname = "uv.nextools_straight"
     bl_label = "Straight"
     bl_options = {"REGISTER", "UNDO"}
 
-    @classmethod
-    def poll(cls, context):
-        obj = context.active_object
-        return obj and obj.type == "MESH" and obj.mode == "EDIT"
-
     def execute(self, context):
-        obj = context.active_object
-        me = obj.data
-        bm = bmesh.from_edit_mesh(me)
-
-        uv_layer_name = me.uv_layers.active.name if me.uv_layers.active else None
+        obj, me, bm, uv_layer_name = self.get_bmesh_and_uv(context)
         if not uv_layer_name:
             self.report({"ERROR"}, "No UV Map found")
             return {"CANCELLED"}

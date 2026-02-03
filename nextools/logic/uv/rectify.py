@@ -38,8 +38,6 @@ def align_uv_rectify(obj: Object, bm: BMesh, uv_layer_name: str, keep_bounds: bo
     loops[2][uv_layer].uv = (1, 1)
     loops[3][uv_layer].uv = (0, 1)
 
-    bmesh.update_edit_mesh(mesh_data)
-
     try:
         bpy.ops.uv.follow_active_quads(mode="EVEN")
     except RuntimeError:
@@ -56,7 +54,6 @@ def align_uv_rectify(obj: Object, bm: BMesh, uv_layer_name: str, keep_bounds: bo
     if current_bounds:
         _apply_uv_remap(selected_faces, uv_layer, current_bounds, orig_bounds)
 
-    bmesh.update_edit_mesh(mesh_data)
     return True
 
 

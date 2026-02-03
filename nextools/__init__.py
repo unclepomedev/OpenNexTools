@@ -16,10 +16,10 @@ class NextoolsSettings(bpy.types.PropertyGroup):
 
 _classes = [
     NextoolsSettings,
-    uv.UV_OT_NextoolsLiteRectify,
-    uv.UV_OT_NextoolsStraight,
-    color_id.UV_OT_NextoolsBakeColorID,
-    panel.UV_PT_NextoolsPanel,
+    uv.UV_OT_nextools_lite_rectify,
+    uv.UV_OT_nextools_straight,
+    color_id.UV_OT_nextools_bake_color_id,
+    panel.UV_PT_nextools_panel,
 ]
 
 
