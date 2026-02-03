@@ -17,7 +17,7 @@ class UV_PT_NextoolsPanel(bpy.types.Panel):
         col = layout.column(align=True)
 
         row = col.row(align=True)
-        row.operator(UV_OT_NextoolsStraight.bl_idname, text="Straight", icon="RECOVER_LAST")
+        row.operator(UV_OT_NextoolsStraight.bl_idname, text="Straight", icon="IPO_LINEAR")
         row.operator(UV_OT_NextoolsLiteRectify.bl_idname, text="Rectify", icon="GRID")
         row.prop(
             context.scene.nextools_settings, "rectify_keep_bounds", text="", icon="PIVOT_BOUNDBOX"
