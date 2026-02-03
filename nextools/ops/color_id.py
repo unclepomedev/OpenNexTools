@@ -50,8 +50,10 @@ class UV_OT_nextools_bake_color_id(bpy.types.Operator):
             if original_mode != "OBJECT" and obj:
                 try:
                     bpy.ops.object.mode_set(mode=original_mode)
+                except RuntimeError as ex:
+                    self.report({"DEBUG"}, f"Mode restore blocked by context: {ex}")
                 except Exception as ex:
-                    self.report({"DEBUG"}, f"Could not restore original mode.: {ex}")
+                    self.report({"DEBUG"}, f"Unexpected error during mode restore: {ex}")
 
     @staticmethod
     def _switch_viewport_shading(context):
