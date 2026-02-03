@@ -26,3 +26,4 @@ class UV_PT_nextools_panel(bpy.types.Panel):
         col.separator()
         col.label(text="Baking")
         col.operator(UV_OT_nextools_bake_color_id.bl_idname, text="Color ID", icon="GROUP_VCOL")
+        layout.operator("uv.nextools_uv_morph", text="Live UV", icon="PLAY")
