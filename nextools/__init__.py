@@ -2,6 +2,7 @@
 
 from .ops import uv
 from .ops import color_id
+from .ops import uv_morph
 from .ui import panel
 import bpy
 
@@ -18,6 +19,7 @@ _classes = [
     NextoolsSettings,
     uv.UV_OT_nextools_lite_rectify,
     uv.UV_OT_nextools_straight,
+    uv_morph.UV_OT_nextools_uv_morph,
     color_id.UV_OT_nextools_bake_color_id,
     panel.UV_PT_nextools_panel,
 ]
