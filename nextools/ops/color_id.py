@@ -2,6 +2,7 @@
 
 import bpy
 from ..logic import color_id as logic_color_id
+from ..utils.profiler import profile_execution
 
 
 class UV_OT_nextools_bake_color_id(bpy.types.Operator):
@@ -22,6 +23,7 @@ class UV_OT_nextools_bake_color_id(bpy.types.Operator):
         obj = context.active_object
         return obj and obj.type == "MESH" and obj.data.uv_layers.active
 
+    @profile_execution
     def execute(self, context):
         obj = context.active_object
         original_mode = obj.mode
