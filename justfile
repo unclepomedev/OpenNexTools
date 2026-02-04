@@ -7,7 +7,7 @@ sync:
     uv sync --all-extras --dev
 
 fmt:
-    uv run ruff format nextools tests
+    uv run ruff format nextools tests benchmarks
 
 fix-rs:
     cargo clippy --fix --allow-dirty --allow-staged --all-targets -- -D warnings
@@ -35,3 +35,7 @@ test:
 
 test-rs:
     cargo test
+
+export NEXTOOLS_PROFILE := "true"
+benchmark:
+    blup run -- --background --factory-startup --python benchmarks/color_id.py
