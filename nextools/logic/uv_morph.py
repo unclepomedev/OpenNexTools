@@ -3,16 +3,17 @@
 import bpy
 
 
+MOD_NAME = "NT_UV_Morph"
+
+
 def ensure_uv_morph_node_group() -> bpy.types.NodeTree:
     """
     Creates and returns the Geometry Nodes group for UV Morph if it doesn't exist.
     """
-    group_name = "NT_UV_Morph"
+    if MOD_NAME in bpy.data.node_groups:
+        return bpy.data.node_groups[MOD_NAME]
 
-    if group_name in bpy.data.node_groups:
-        return bpy.data.node_groups[group_name]
-
-    ng = bpy.data.node_groups.new(name=group_name, type="GeometryNodeTree")
+    ng = bpy.data.node_groups.new(name=MOD_NAME, type="GeometryNodeTree")
 
     # IO =========================================================================================
     ng.interface.new_socket(name="Geometry", in_out="INPUT", socket_type="NodeSocketGeometry")

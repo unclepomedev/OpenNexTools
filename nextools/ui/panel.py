@@ -3,6 +3,7 @@
 import bpy
 from nextools.ops.uv import UV_OT_nextools_lite_rectify, UV_OT_nextools_straight
 from nextools.ops.color_id import UV_OT_nextools_bake_color_id
+from nextools.ops.uv_morph import UV_OT_nextools_uv_morph
 
 
 class UV_PT_nextools_panel(bpy.types.Panel):
@@ -26,4 +27,4 @@ class UV_PT_nextools_panel(bpy.types.Panel):
         col.separator()
         col.label(text="Baking")
         col.operator(UV_OT_nextools_bake_color_id.bl_idname, text="Color ID", icon="GROUP_VCOL")
-        layout.operator("uv.nextools_uv_morph", text="Live UV", icon="PLAY")
+        layout.operator(UV_OT_nextools_uv_morph.bl_idname, text="UV Morph", icon="PLAY")

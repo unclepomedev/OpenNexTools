@@ -18,7 +18,7 @@ class UV_OT_nextools_uv_morph(bpy.types.Operator):
 
     def execute(self, context):
         obj = context.active_object
-        mod_name = "NT_UV_Morph"
+        mod_name = logic_uv_morph.MOD_NAME
 
         if mod_name in obj.modifiers:
             obj.modifiers.remove(obj.modifiers[mod_name])
