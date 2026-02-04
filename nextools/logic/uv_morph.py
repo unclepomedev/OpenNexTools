@@ -88,3 +88,21 @@ def ensure_uv_morph_node_group() -> bpy.types.NodeTree:
     links.new(node_mix.outputs["Result"], node_set_pos.inputs["Position"])
 
     return ng
+
+
+def set_modifier_factor(mod: bpy.types.NodesModifier, value: float) -> None:
+    """
+    Sets the 'Factor' input value of a Geometry Nodes modifier.
+    """
+    ng = mod.node_group
+    if not ng or not hasattr(ng, "interface"):
+        return
+
+    for item in ng.interface.items_tree:
+        if item.name == "Factor" and item.item_type == "SOCKET":
+            if item.identifier in mod.keys():
+                mod[item.identifier] = value
+                return
+
+    if "Factor" in mod.keys():
+        mod["Factor"] = value

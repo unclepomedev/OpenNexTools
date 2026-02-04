@@ -20,6 +20,7 @@ _classes = [
     uv.UV_OT_nextools_lite_rectify,
     uv.UV_OT_nextools_straight,
     uv_morph.UV_OT_nextools_uv_morph,
+    uv_morph.UV_OT_nextools_bake_morph,
     color_id.UV_OT_nextools_bake_color_id,
     panel.UV_PT_nextools_panel,
 ]

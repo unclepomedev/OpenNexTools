@@ -3,7 +3,8 @@
 import bpy
 from nextools.ops.uv import UV_OT_nextools_lite_rectify, UV_OT_nextools_straight
 from nextools.ops.color_id import UV_OT_nextools_bake_color_id
-from nextools.ops.uv_morph import UV_OT_nextools_uv_morph
+from nextools.ops.uv_morph import UV_OT_nextools_uv_morph, UV_OT_nextools_bake_morph
+from nextools.logic import uv_morph
 
 
 class UV_PT_nextools_panel(bpy.types.Panel):
@@ -28,3 +29,8 @@ class UV_PT_nextools_panel(bpy.types.Panel):
         col.label(text="Baking")
         col.operator(UV_OT_nextools_bake_color_id.bl_idname, text="Color ID", icon="GROUP_VCOL")
         layout.operator(UV_OT_nextools_uv_morph.bl_idname, text="UV Morph", icon="PLAY")
+        obj = context.active_object
+        if obj and uv_morph.MOD_NAME in obj.modifiers:
+            box = layout.box()
+            box.label(text="Export Tools:", icon="EXPORT")
+            box.operator(UV_OT_nextools_bake_morph.bl_idname, icon="SHAPEKEY_DATA")
