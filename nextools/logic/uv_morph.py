@@ -2,7 +2,6 @@
 
 import bpy
 
-
 MOD_NAME = "NT_UV_Morph"
 
 
@@ -106,3 +105,77 @@ def set_modifier_factor(mod: bpy.types.NodesModifier, value: float) -> None:
 
     if "Factor" in mod.keys():
         mod["Factor"] = value
+
+
+def toggle_uv_morph_modifier(obj: bpy.types.Object) -> bool:
+    """
+    Returns:
+        True if Added, False if Removed
+    """
+    if MOD_NAME in obj.modifiers:
+        obj.modifiers.remove(obj.modifiers[MOD_NAME])
+        return False
+
+    ng = ensure_uv_morph_node_group()
+    mod = obj.modifiers.new(name=MOD_NAME, type="NODES")
+    mod.node_group = ng
+    mod.show_on_cage = True
+    mod.show_in_editmode = True
+
+    active_uv = obj.data.uv_layers.active
+    if active_uv:
+        if "UV Map" in mod.keys():
+            mod["UV Map"] = active_uv.name
+
+    return True
+
+
+def _create_snapshot_mesh(
+    context: bpy.types.Context, original_obj: bpy.types.Object, is_start: bool
+) -> bpy.types.Object:
+    bpy.ops.object.select_all(action="DESELECT")
+    original_obj.select_set(True)
+    context.view_layer.objects.active = original_obj
+
+    bpy.ops.object.duplicate()
+    new_obj = context.active_object
+    if is_start:
+        new_obj.name = f"{original_obj.name}_Baked"
+
+    mod = new_obj.modifiers[MOD_NAME]
+    set_modifier_factor(mod, 0.0 if is_start else 1.0)
+    bpy.ops.object.modifier_apply(modifier=MOD_NAME)
+
+    return new_obj
+
+
+def execute_bake_process(
+    context: bpy.types.Context, original_obj: bpy.types.Object
+) -> bpy.types.Object:
+    """
+    Assume the context is overridden.
+    """
+    basis_obj = _create_snapshot_mesh(context, original_obj, True)
+    target_obj = _create_snapshot_mesh(context, original_obj, False)
+
+    bpy.ops.object.select_all(action="DESELECT")
+    target_obj.select_set(True)
+    basis_obj.select_set(True)
+    context.view_layer.objects.active = basis_obj
+
+    bpy.ops.object.join_shapes()
+
+    if basis_obj.data.shape_keys:
+        keys = basis_obj.data.shape_keys.key_blocks
+        keys[-1].name = "UV_Morph"
+        keys[-1].value = 0.0
+
+    bpy.ops.object.select_all(action="DESELECT")
+    target_obj.select_set(True)
+    bpy.ops.object.delete()
+
+    bpy.ops.object.select_all(action="DESELECT")
+    basis_obj.select_set(True)
+    context.view_layer.objects.active = basis_obj
+
+    return basis_obj

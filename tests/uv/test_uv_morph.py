@@ -2,7 +2,13 @@
 
 import unittest
 import bpy
-from nextools.logic.uv_morph import ensure_uv_morph_node_group
+from nextools.logic.uv_morph import (
+    ensure_uv_morph_node_group,
+    toggle_uv_morph_modifier,
+    execute_bake_process,
+    set_modifier_factor,
+    MOD_NAME,
+)
 
 
 class TestUVMorphLogic(unittest.TestCase):
@@ -98,6 +104,54 @@ class TestUVMorphLogic(unittest.TestCase):
         self.assertTrue(link_exists("GeometryNodeSplitEdges", "GeometryNodeSetPosition"))
         self.assertTrue(link_exists("GeometryNodeSetPosition", "NodeGroupOutput"))
         self.assertTrue(link_exists("ShaderNodeMix", "GeometryNodeSetPosition"))
+
+
+class TestUVMorphBake(unittest.TestCase):
+    def setUp(self):
+        bpy.ops.wm.read_homefile(use_empty=True)
+        bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False)
+        self.obj = bpy.context.active_object
+        # Add UV Map
+        if not self.obj.data.uv_layers:
+            self.obj.data.uv_layers.new(name="UVMap")
+        toggle_uv_morph_modifier(self.obj)
+
+    def tearDown(self):
+        pass
+
+    def test_set_modifier_factor(self):
+        """
+        Verify that set_modifier_factor updates the modifier input without error.
+        """
+        mod = self.obj.modifiers[MOD_NAME]
+        set_modifier_factor(mod, 0.5)
+
+        # Verification: check if any property in the modifier corresponds to 0.5
+        found = False
+        for k, v in mod.items():
+            if isinstance(v, float) and abs(v - 0.5) < 1e-6:
+                found = True
+                break
+        self.assertTrue(found, "Factor value 0.5 not found in modifier properties")
+
+    def test_bake_process_execution(self):
+        """
+        Verify that execute_bake_process creates a new object with Shape Keys.
+        """
+        if bpy.context.object and bpy.context.object.mode != "OBJECT":
+            bpy.ops.object.mode_set(mode="OBJECT")
+
+        baked_obj = execute_bake_process(bpy.context, self.obj)
+
+        self.assertIsNotNone(baked_obj)
+        self.assertTrue(baked_obj.name.startswith("Plane_Baked"))
+
+        self.assertIsNotNone(baked_obj.data.shape_keys)
+        key_blocks = baked_obj.data.shape_keys.key_blocks
+        self.assertIn("Basis", key_blocks)
+        self.assertIn("UV_Morph", key_blocks)
+
+        self.assertIn(self.obj.name, bpy.data.objects)
 
 
 if __name__ == "__main__":
