@@ -25,6 +25,12 @@ def ensure_uv_morph_node_group() -> bpy.types.NodeTree:
     input_factor.min_value = 0.0
     input_factor.max_value = 1.0
 
+    input_scale = ng.interface.new_socket(
+        name="Scale", in_out="INPUT", socket_type="NodeSocketFloat"
+    )
+    input_scale.default_value = 5.0
+    input_scale.min_value = 0.001
+
     input_uv_name = ng.interface.new_socket(
         name="UV Map", in_out="INPUT", socket_type="NodeSocketString"
     )
@@ -46,7 +52,12 @@ def ensure_uv_morph_node_group() -> bpy.types.NodeTree:
 
     node_uv_attr = nodes.new("GeometryNodeInputNamedAttribute")
     node_uv_attr.data_type = "FLOAT_VECTOR"
-    node_uv_attr.location = (-400, 200)
+    node_uv_attr.location = (-600, 200)
+
+    node_scale_math = nodes.new("ShaderNodeVectorMath")
+    node_scale_math.operation = "SCALE"
+    node_scale_math.location = (-350, 200)
+    node_scale_math.label = "UV Scale"
 
     node_pos = nodes.new("GeometryNodeInputPosition")
     node_pos.location = (-400, 0)
@@ -67,9 +78,12 @@ def ensure_uv_morph_node_group() -> bpy.types.NodeTree:
 
     links.new(node_in.outputs["UV Map"], node_uv_attr.inputs["Name"])
 
+    links.new(node_uv_attr.outputs["Attribute"], node_scale_math.inputs[0])
+    links.new(node_in.outputs["Scale"], node_scale_math.inputs[3])
+    links.new(node_scale_math.outputs["Vector"], node_mix.inputs["B"])
+
     links.new(node_in.outputs["Factor"], node_mix.inputs["Factor"])
     links.new(node_pos.outputs["Position"], node_mix.inputs["A"])
-    links.new(node_uv_attr.outputs["Attribute"], node_mix.inputs["B"])
 
     links.new(node_mix.outputs["Result"], node_set_pos.inputs["Position"])
 
